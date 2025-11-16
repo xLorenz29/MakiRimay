@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandsFull - Aprende Lenguaje de Señas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>HandsFull 🤗</h1>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-left">
+            <img src="img/hero-image.jpg" alt="Imagen representativa">
+        </div>
+        <div class="hero-right">
+            <h2>Aprende lenguaje de señas básico con nuestra herramienta interactiva</h2>
+
+            <button id="btn-demo">
+                Probar demo
+            </button>
+        </div>
+    </section>
+
+    <!-- CARACTERISTICAS -->
+    <section id="caracteristicas">
+        <h2>Características</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Fácil de usar</h3>
+                <p>Interfaz simple e intuitiva para todos los públicos.</p>
+            </div>
+            <div class="card">
+                <h3>Aprende visualmente</h3>
+                <p>Guías visuales claras para cada seña del abecedario y números.</p>
+            </div>
+            <div class="card">
+                <h3>Interactúa con IA</h3>
+                <p>Reconocimiento en tiempo real para practicar tus señales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿CÓMO FUNCIONA? -->
+    <section id="funcion">
+        <h2>¿Cómo funciona?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>1. Selecciona el modo</h3>
+                <p>Elige si quieres practicar letras o números en el selector de modo.</p>
+            </div>
+            <div class="card">
+                <h3>2. Haz la seña frente a la cámara</h3>
+                <p>Coloca tu mano en el recuadro verde y haz una seña clara.</p>
+            </div>
+            <div class="card">
+                <h3>3. Revisa tu resultado</h3>
+                <p>La IA te mostrará lo que reconoció y construirá la palabra paso a paso.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DICCIONARIO DE SEÑAS -->
+    <section id="diccionario">
+        <h3>📘 Guía de Señas (ASL)</h3>
+        <div class="diccionario-columnas">
+            <div>
+                <h4>Letras (A-Y)</h4>
+                <div class="grid" id="grid-letras"></div>
+            </div>
+            <div>
+                <h4>Números (0-9)</h4>
+                <div class="grid" id="grid-numeros"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO -->
+    <section id="demo">
+        <div class="demo-left">
+            <label for="mode">Modo: </label>
+            <select id="mode">
+                <option value="letters">Letras</option>
+                <option value="numbers">Números</option>
+            </select>
+
+            <button id="capture">Tomar foto y predecir</button>
+            <button id="toggleAuto">Iniciar automático</button>
+
+            <div id="videoContainer">
+                <video id="video" width="320" height="240" autoplay></video>
+                <canvas id="overlay" width="320" height="240"></canvas>
+            </div>
+
+            <canvas id="captureCanvas" width="320" height="240" style="display: none;"></canvas>
+        </div>
+
+        <div class="demo-right">
+            <h3>Intenta replicar esta palabra:</h3>
+            <div id="palabraSugerida" class="sugerida">...</div>
+
+            <h3>Palabra construida:</h3>
+            <div id="palabra" class="construida">...</div>
+
+            <h3>Resultado:</h3>
+            <div id="result" class="prediccion">Predicción: ...</div>
+        </div>
+    </section>
+
+    <button id="toggleDetalles">Mostrar más detalles</button>
+
+    <!-- DETALLES OPCIONALES -->
+    <section id="detalles" style="display: none;">
+        <h3>Vista previa del ROI</h3>
+        <img id="roiPreview" src="" alt="Aún no hay imagen previa" />
+    </section>
+
+    <!-- CONTACTO
+    <section id="contacto">
+        <h3>Contáctanos</h3>
+        <form>
+            <input type="text" placeholder="Tu nombre" required />
+            <input type="email" placeholder="Tu correo" required />
+            <textarea placeholder="Tu mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section> -->
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 HandsFull - Proyecto universitario. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script>
+        const toggleBtn = document.getElementById("toggleDetalles");
+        const detallesSection = document.getElementById("detalles");
+
+        toggleBtn.addEventListener("click", () => {
+            const visible = detallesSection.style.display === "block";
+            detallesSection.style.display = visible ? "none" : "block";
+            toggleBtn.textContent = visible ? "Mostrar más detalles" : "Ocultar detalles";
+        });
+    </script>
+    <script>
+        document.getElementById("btn-demo").addEventListener("click", () => {
+            document.getElementById("demo").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+
+    <script src="js/predict.js"></script>
+    <script src="js/senas.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background-color: #007EC5;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* HERO SECTION */
+#hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: #ecf0f1;
+}
+
+.hero-left,
+.hero-right {
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.hero-left img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-right h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+#btn-demo {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-demo:hover {
+    background-color: #1c5982;
+}
+
+/* CARACTERÍSTICAS */
+#caracteristicas {
+    background-color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+#caracteristicas h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* funcion */
+#funcion {
+    /* background-color: #ecf0f1; */
+    padding: 60px 40px;
+    text-align: center;
+}
+
+#funcion h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+/* Sección completa */
+#diccionario {
+    padding: 40px 20px;
+    background-color: #ecf0f1;
+    text-align: center;
+}
+
+#diccionario h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Contenedor de las dos columnas */
+.diccionario-columnas {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Títulos de letras y números */
+.diccionario-columnas h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Grillas ya existentes */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Estilo de imagen con hover */
+.grid img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.grid img:hover {
+    transform: scale(1.8);
+    z-index: 10;
+    box-shadow: 0 0 6px #000;
+    position: relative;
+}
+
+/* Sección de la demo */
+#demo {
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    background-color: #fff;
+}
+
+/* Columna izquierda: controles y video */
+.demo-left {
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
+}
+
+/* Columna derecha: palabras sugeridas y construidas */
+.demo-right {
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Botones y select */
+.demo-left button,
+.demo-left select {
+    margin: 8px 5px 15px 0;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0b5ed7;
+    color: white;
+    cursor: pointer;
+}
+
+.demo-left button:hover {
+    background-color: #084db6;
+}
+
+/* Video y canvas sobrepuestos */
+#videoContainer {
+    position: relative;
+    width: 320px;
+    height: 240px;
+    margin-bottom: 20px;
+}
+
+#video,
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Textos */
+.sugerida,
+.construida {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.prediccion {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+}
+
+#toggleDetalles {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#toggleDetalles:hover {
+    background-color: #00327c;
+}
+
+#detalles {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#detalles img {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
