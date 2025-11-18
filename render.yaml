@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: sign-backend
+    env: python
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn server:app --timeout 120 --workers 1"
