@@ -23,9 +23,6 @@ def predict():
     file = request.files['image']
     img_np = cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_COLOR)
 
-    if img_np is None:
-        return jsonify({'error': 'Invalid image format'}), 400
-
     # Preprocesar según el modo
     if mode == 'letters':
         model = letter_model
@@ -44,4 +41,4 @@ def predict():
     return jsonify({'prediction': label})
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=10000)
+    app.run(debug=True)
