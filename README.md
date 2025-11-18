@@ -6,7 +6,7 @@
 
 ## ✅ Requisitos del backend
 
-- Python **3.9**
+- Python **3.11.5**
 - pip
 - Entorno virtual recomendado
 
