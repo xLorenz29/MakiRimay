@@ -1,22 +1,23 @@
-#Subir
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import tensorflow as tf
 import numpy as np
 import cv2
+import os
 
 app = Flask(__name__)
 CORS(app)
 
-# Cargar ambos modelos una vez
-letter_model = tf.keras.models.load_model("best_letter.h5")
-number_model = tf.keras.models.load_model("best_number.h5")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LETTER_MODEL_PATH = os.path.join(BASE_DIR, "best_letter.h5")
+NUMBER_MODEL_PATH = os.path.join(BASE_DIR, "best_number.h5")
+
+letter_model = tf.keras.models.load_model(LETTER_MODEL_PATH)
+number_model = tf.keras.models.load_model(NUMBER_MODEL_PATH)
 
 @app.route('/predict', methods=['POST'])
 def predict():
     mode = request.args.get('mode', 'letters')
-
-    print(f"Modo recibido: {mode}")
 
     if 'image' not in request.files:
         return jsonify({'error': 'No image provided'}), 400
@@ -24,7 +25,6 @@ def predict():
     file = request.files['image']
     img_np = cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_COLOR)
 
-    # Preprocesar según el modo
     if mode == 'letters':
         model = letter_model
         abc = 'ABCDEFGHIKLMNOPQRSTUVWXY'
@@ -42,4 +42,4 @@ def predict():
     return jsonify({'prediction': label})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host="0.0.0.0", port=5000)
