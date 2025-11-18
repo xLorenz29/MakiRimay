@@ -13,10 +13,10 @@
 ### Dependencias Python
 
 ```bash
-pip install tensorflow==2.12.0
+pip install tensorflow==2.7.0
 pip install opencv-python
 pip install protobuf==3.20.*
-pip install numpy==1.23.5
+pip install numpy==1.21
 pip install flask
 pip install flask-cors
 ````
