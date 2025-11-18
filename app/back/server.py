@@ -3,6 +3,7 @@ from flask_cors import CORS
 import tensorflow as tf
 import numpy as np
 import cv2
+import os   # <--- Necesario para leer el puerto
 
 app = Flask(__name__)
 CORS(app)
@@ -26,7 +27,6 @@ def predict():
     if img_np is None:
         return jsonify({'error': 'Invalid image format'}), 400
 
-    # Preprocesar según el modo
     if mode == 'letters':
         model = letter_model
         abc = 'ABCDEFGHIKLMNOPQRSTUVWXY'
@@ -44,4 +44,5 @@ def predict():
     return jsonify({'prediction': label})
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 5000))  # ⬅ fallback para local
+    app.run(host="0.0.0.0", port=port)
