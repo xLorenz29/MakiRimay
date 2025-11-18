@@ -1,0 +1,6 @@
+[build]
+command = ""          # Sin build
+publish = "app/front" # Tu carpeta del front
+
+[build.environment]
+PYTHON_VERSION = ""   # Desactiva Python
