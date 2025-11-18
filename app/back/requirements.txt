@@ -1,6 +1,6 @@
-tensorflow==2.12.0
-opencv-python
-protobuf==3.20.*
-numpy==1.23.5
-flask
+Flask
 flask-cors
+gunicorn
+tensorflow-cpu
+opencv-python
+numpy
