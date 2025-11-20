@@ -1,6 +1,19 @@
-# 🤲 HandsFull
+# 🤗 HandsFull
+**HandsFull** 
+Es una plataforma diseñada para facilitar el aprendizaje del lenguaje de señas de forma interactiva. 
+Nace como un proyecto universitario y combina el uso de la cámara web con un modelo de inteligencia artificial capaz de reconocer gestos en tiempo real. 
 
-**HandsFull** es una plataforma interactiva para el aprendizaje del lenguaje de señas, desarrollada como proyecto universitario. Utiliza la cámara web y un modelo de reconocimiento basado en inteligencia artificial para identificar gestos en tiempo real, brindando una experiencia accesible, educativa y dinámica para quienes deseen aprender lenguaje de señas de forma fácil y práctica.
+Su objetivo es ofrecer una experiencia sencilla, accesible y dinámica para quienes deseen aprender señas de manera práctica.
+---
+**Características principales**
+
+- Reconocimiento de señas en tiempo real mediante cámara web.
+
+- Modelo de IA entrenado para letras, números y gestos básicos.
+
+- Interfaz simple, educativa e interactiva.
+
+- Modo manual y modo automático de predicción.
 
 ---
 
@@ -8,7 +21,7 @@
 
 - Python **3.11.5**
 - pip
-- Entorno virtual recomendado
+- Entorno virtual (venv)
 
 ### Dependencias Python
 
@@ -23,12 +36,11 @@ pip install flask-cors
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## 🚀 Ejecución del proyecto
 
-### 1. Frontend
+### 1. **Frontend**
 
-Desde la carpeta `app/front`, ejecuta:
-
+-- Desde la carpeta principal
 ```bash
 cd app/front
 python -m http.server 8000
@@ -43,10 +55,10 @@ Esto iniciará el frontend en [http://localhost:8000](http://localhost:8000)
 Desde la carpeta `app/back`, activa tu entorno virtual e instala las dependencias:
 
 ```bash
-cd app/back
-
 # Activar el entorno
 .\venv\Scripts\activate
+
+cd app/back
 
 # Ejecutar el servidor
 python server.py
