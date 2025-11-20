@@ -3,8 +3,6 @@
 Es una plataforma diseñada para facilitar el aprendizaje del lenguaje de señas de forma interactiva. 
 Nace como un proyecto universitario y combina el uso de la cámara web con un modelo de inteligencia artificial capaz de reconocer gestos en tiempo real. Su objetivo es ofrecer una experiencia sencilla, accesible y dinámica para quienes deseen aprender señas de manera práctica.
 
-
-
 ---
 **Características principales**
 

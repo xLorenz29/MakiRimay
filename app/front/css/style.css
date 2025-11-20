@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
+    background-color: transparent !important;
     color: #333;
 }
 
@@ -73,9 +73,10 @@ section {
     margin: 0;
 }
 
-section:not(#hero):not(#banner) {
+section:not(#hero):not(#banner):not(#diccionario) {
     background-color: #ffffff;
-    padding: 4rem 0;
+    margin-top: 3rem;
+    padding: 4rem 4rem;
 }
 
 section h2 {
@@ -105,13 +106,15 @@ section h3 {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.25s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 8px 120px rgba(102, 126, 234, 0.2);
+    border: 2px solid #667eea; /* borde azul al pasar el mouse */
+
 }
 
 .card h3 {
