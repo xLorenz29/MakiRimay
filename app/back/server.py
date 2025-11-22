@@ -15,6 +15,10 @@ NUMBER_MODEL_PATH = os.path.join(BASE_DIR, "best_number.h5")
 letter_model = tf.keras.models.load_model(LETTER_MODEL_PATH)
 number_model = tf.keras.models.load_model(NUMBER_MODEL_PATH)
 
+@app.route('/')
+def home():
+    return jsonify({"status": "Backend running"})
+
 @app.route('/predict', methods=['POST'])
 def predict():
     mode = request.args.get('mode', 'letters')
