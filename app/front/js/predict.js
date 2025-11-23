@@ -57,7 +57,7 @@ async function autoCaptureAndPredict() {
         const mode = document.getElementById("mode").value;
 
         try {
-            const response = await fetch(`http://127.0.0.1:5000/predict?mode=${mode}`, {
+            const response = await fetch(`https://octopus-app-xnbme.ondigitalocean.app/predict?mode=${mode}`, {
                 method: "POST",
                 body: formData
             });
@@ -107,7 +107,7 @@ document.getElementById("capture").addEventListener("click", () => {
         formData.append("image", blob, "captured.png");
         const mode = document.getElementById("mode").value;
 
-        const response = await fetch(`http://127.0.0.1:5000/predict?mode=${mode}`, {
+        const response = await fetch(`https://octopus-app-xnbme.ondigitalocean.app/predict?mode=${mode}`, {
             method: "POST",
             body: formData
         });
