@@ -53,7 +53,7 @@ async function autoCaptureAndPredict() {
 
     tempCanvas.toBlob(async (blob) => {
         const formData = new FormData();
-        formData.append("file", blob, "captured.png");
+        formData.append("image", blob, "captured.png");
         const mode = document.getElementById("mode").value;
 
         try {
@@ -104,7 +104,7 @@ document.getElementById("capture").addEventListener("click", () => {
 
     tempCanvas.toBlob(async (blob) => {
         const formData = new FormData();
-        formData.append("file", blob, "captured.png");
+        formData.append("image", blob, "captured.png");
         const mode = document.getElementById("mode").value;
 
         const response = await fetch(`https://octopus-app-xnbme.ondigitalocean.app/predict?mode=${mode}`, {
